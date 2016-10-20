@@ -11,6 +11,10 @@ class Oligo(models.Model):
     class Meta:
         ordering = ('gene',)
 
+    def __str__(self):
+        return self.gene
+
+
 
 from django.db.models.signals import post_save
 from django.dispatch import receiver

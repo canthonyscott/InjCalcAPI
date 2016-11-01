@@ -93,17 +93,6 @@ if os.getenv('SETTINGS_MODE') == 'dev':
         }
     }
 
-# Connect to production DB locally (must auth IP on Google App Engine)
-elif os.getenv('SETTINGS_MODE') == 'prod':
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.postgresql',
-            'NAME': 'dfpl9uf9noc1jh',
-            'HOST': 'ec2-54-225-79-232.compute-1.amazonaws.com',
-            'USER': 'bdfnqdxhmtgcpk',
-            'PASSWORD': 'dJqxooF5lCFmjQ0xWTs85uaGU9',
-        }
-    }
 # running in production, use Heroku PSQL DB
 else:
     DATABASES = {
@@ -111,8 +100,8 @@ else:
             'ENGINE': 'django.db.backends.postgresql',
             'NAME': 'dfpl9uf9noc1jh',
             'HOST': 'ec2-54-225-79-232.compute-1.amazonaws.com',
-            'USER': 'bdfnqdxhmtgcpk',
-            'PASSWORD': 'dJqxooF5lCFmjQ0xWTs85uaGU9',
+            'USER': os.environ['USER'],
+            'PASSWORD': os.environ['PASSWORD'],
         }
     }
 

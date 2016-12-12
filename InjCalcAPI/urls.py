@@ -20,6 +20,7 @@ from rest_framework.authtoken import views
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^api/', include('oligos.urls')),
+    url(r'^/', include('GUI.urls'))
 
 ]
 

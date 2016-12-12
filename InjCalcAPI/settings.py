@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'oligos.apps.OligosConfig',
+    'GUI.apps.GuiConfig',
     'rest_framework.authtoken',
     'corsheaders',
 

@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = os.environ["SECRET_KEY"]
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
@@ -83,6 +83,7 @@ WSGI_APPLICATION = 'InjCalcAPI.wsgi.application'
 
 # Working in production, use local MySQL DB
 if os.getenv('SETTINGS_MODE') == 'dev':
+    print("Using Dev Database")
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.postgresql',
@@ -143,8 +144,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.10/howto/static-files/
 
 
-# STATIC_URL = 'https://storage.googleapis.com/injectioncalculatorapi-static/static/'
-STATIC_URL = '/static/'
+STATIC_URL = 'https://storage.googleapis.com/injcalcapi-static/static/'
+# STATIC_URL = '/static/'
 
 # STATIC_ROOT = 'static'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
